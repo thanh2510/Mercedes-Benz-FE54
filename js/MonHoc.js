@@ -1,0 +1,1 @@
+var monhoc= 'mon học';
