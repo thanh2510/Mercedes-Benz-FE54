@@ -1,0 +1,21 @@
+.btn-primary{
+    @include merText($color-white-0, $fs-16, 16px);
+    @include merButtonPrimary($color-primary, $color-primary, $border-radius-1);
+    transition: color .25s ease-out;
+}
+button{
+    text-rendering: auto;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    letter-spacing: normal;
+    word-spacing: normal;
+    border-width: 2px;
+    border-style: outset;
+    transition: color .25s ease-out;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    box-shadow: none !important;
+}

@@ -1,0 +1,214 @@
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: 1.43;
+}
+
+@mixin styleButton($bg-color, $border-color, $radius, $py, $px) {
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    padding: $py $px;
+}
+
+@mixin styleHoverButton($bg-color, $border-color, $color) {
+    background-color: $bg-color, ;
+    border-color: $border-color;
+    color: $color;
+}
+
+@mixin hoverButtonGray( $color) {
+    font-weight: 400;
+    height: 45px;
+    line-height: 20px;
+    padding: 12px 15px;
+    color: #505763;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+@mixin dropDownHoverButton($boderColor, $color, $background-color) {
+    font-size: 15px;
+    padding: 24px 16px;
+    text-align: center;
+    width: 330px;
+    border-bottom-left-radius: 2px;
+    border-top: 1px solid $boderColor;
+    color: $color;
+    background-color: $background-color;
+    top: 100%;
+    z-index: 1000;
+    position: absolute;
+    box-shadow: 0 4px 16px rgba(20, 23, 28, .25);
+    right: 0;
+}
+
+@mixin beforeDropDown {
+    content: ''!important;
+    left: auto;
+    right: 14px;
+    border-color: transparent transparent $color-white-0 transparent;
+    top: -14px;
+    border-style: solid;
+    border-width: 0 10px 13px;
+    height: 0;
+    position: absolute;
+}
+
+@mixin inputClass($height, $boder-color, $bg-color) {
+    box-shadow: none;
+    background-image: none;
+    border: 1px solid $boder-color;
+    line-height: 1.43;
+    color: #29303b;
+    height: $height;
+    padding: 10px 12px;
+    background-color: $bg-color;
+    transition: border-color ease-in-out .08s, box-shadow ease-in-out .08s;
+}
+
+@mixin classIcon($color, $font-size, $font-weight) {
+    line-height: 1;
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    text-transform: none;
+    display: block;
+}
+
+@mixin textEllipsis($font-weight, $height, $f-s, $color) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-weight: $font-weight;
+    height: $height;
+    font-size: $f-s;
+    color: $color;
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+}
+
+@mixin nextButton {
+    color: #007791;
+    right: -5%;
+    background-color: #fff;
+    border-radius: 50%;
+    border-width: 0;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+    color: #007791;
+    font-size: 24px;
+    height: 47px;
+    line-height: 1;
+    padding: 11px 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 300ms;
+    width: 47px;
+    z-index: 3;
+    opacity: 1;
+    position: absolute;
+}
+@mixin prevButton {
+    color: #007791;
+    left: -13px;
+    background-color: #fff;
+    border-radius: 50%;
+    border-width: 0;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+    color: #007791;
+    font-size: 24px;
+    height: 47px;
+    line-height: 1;
+    padding: 11px 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 300ms;
+    width: 47px;
+    z-index: 3;
+    opacity: 1;
+    position: absolute;
+}
+@mixin iconBanner {
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-variant: normal;
+}
+@mixin boderBox {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(20, 23, 28, 0.15) 0px 1px 3px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 260px;
+    border-radius: 3px;
+    padding: 32px;
+}
+
+// ======================================== Merecdes-benz ========================================
+@mixin merText($color, $font-size, $line-height) {
+    color: $color;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+@mixin merButtonPrimary($background-color, $border, $border-radius) {
+    background-color: $background-color;
+    border: 1px solid $border; 
+    border-radius: $border-radius;
+    padding: 8px 14px 8px 14px;
+    text-align: center;
+}
+
+@mixin tabsContent-2($dau) {
+    grid-column: 1 / 3;
+    grid-row: 2*$dau + 1 / span 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $screen: chua ten man hinh 
+@mixin responsive($screen) {
+    @if(map-has-key($map: $breakpoints, $key: $screen)) {
+        // ten man hinh hơp le 
+        // - > lay gia tri man hinh theo ten 
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        // ten man hinh sai 
+        @warn "Ten man hinh khong hop le!"
+    }
+}

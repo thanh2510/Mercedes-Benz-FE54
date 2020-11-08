@@ -1,0 +1,138 @@
+.tabs {
+    background-color: $color-bg-pri;
+    .tabs__brandhub {
+        text-align: center;
+    }
+}
+
+.tabs {
+    .tabs__brandhub {
+        padding: 10px 0px 30px;
+        .brandhub__item {
+            border: none;
+            background-color: $color-bg-pri;
+            margin-right: 30px;
+            i {
+                margin-right: 4px;
+            }
+            a {
+                transition: 0.3s all;
+                text-decoration: none;
+                @include styleText($color-white-0, $fs-0, $fw-normal);
+                &:hover {
+                    color: $color-primary;
+                    text-decoration: none;
+                }
+            }
+        }
+        .active-tabs {
+            a{
+                color: $color-primary !important;
+
+            }
+        }
+    }
+}
+
+.tabsContent__cover {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    .tabsContent-2 {
+        grid-column: 1 / 3;
+        grid-row: 1 / span 2;
+    }
+    .tabsContent-3{
+        grid-column: 1 / 3;
+        grid-row: 5 / span 2;  
+    }
+    .tabsContent__item {
+        z-index: 2;
+        position: relative;
+        overflow: hidden;
+        @include styleText($color-white-0, $fs-0, $fw-normal);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tabsContent__play {
+            position: absolute;
+            z-index: 5;
+            bottom: 50px;
+            opacity: 1;
+            background-color: #efefef;
+            color: #333;
+            float: left;
+            font-size: 9px;
+            height: 25px;
+            padding: 7px 12px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            span {
+                background-color: #333;
+                height: 26px;
+                margin-left: 12px;
+                padding: 3px 15px;
+                @include styleText($color-white-0, $fs-0, $fw-normal);
+            }
+        }
+        .tabsContent__title {
+            position: absolute;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.35);
+            bottom: 0;
+            height: 50px;
+            left: 0;
+            overflow: hidden;
+            padding: 13px 31px 13px 31px;
+            transition: height 0.5s, background 1.5s;
+            width: 100%;
+            a {
+                overflow: hidden;
+                overflow: visible;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 24px;
+                margin: 0;
+                width: 90px;
+                color: $color-white-0;
+                font-family: "MBCorpoATitleCond";
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            p {
+                opacity: 0;
+            }
+        }
+        &:hover .tabsContent__title {
+            height: 50%;
+            background: rgba(0, 0, 0, 0.63);
+        }
+        &:hover .tabsContent__title a {
+            white-space: normal;
+        }
+        &:hover .tabsContent__title p {
+            animation: showFade 0.6s forwards;
+        }
+        &:not(:hover) .tabsContent__title p {
+            animation: hideFade 0.6s forwards;
+        }
+        &:hover .tabsContent__play {
+            animation: hideFade 0.6s forwards;
+        }
+        &:not(:hover) .tabsContent__play {
+            animation: showFade 0.6s forwards;
+        }
+    }
+    .tabsContent-2 {
+        &:hover .tabsContent__title {
+            height: 25%;
+            background: rgba(0, 0, 0, 0.63);
+        }
+    }
+}

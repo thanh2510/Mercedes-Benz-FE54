@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'MBCorpoATitleCond';
+    src: url('../../fonts/MBCorpoATitleCond-Regular-Web.ttf') format('truetype'), url('../../fonts/MBCorpoATitleCond-Regular-Web.woff2') format('woff');
+}
+
+@font-face {
+    font-family: 'MBCorpoSText';
+    src: url('../../fonts/MBCorpoSText-Regular-Web.ttf') format('truetype'), url('../../fonts/MBCorpoSText-Regular-Web.woff2') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'MBCorpoSText';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    @include styleText($color-black-0,
+    $fs-0,
+    $fw-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'MBCorpoATitleCond';
+}
+
+.mercedes-container {
+    max-width: 1180px;
+    margin: auto;
+}
+
+.active-tabs {
+    border-bottom: 2px solid #00adef !important;
+    padding-bottom: 12px;
+}
